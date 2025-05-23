@@ -65,6 +65,7 @@ h1 {
   align-items: center;
   height: 200px;
   cursor: pointer;
+  padding:20px;
 }
 
 .image-item img {
