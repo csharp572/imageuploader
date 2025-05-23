@@ -51,9 +51,8 @@ h1 {
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .image-item {
@@ -94,9 +93,7 @@ h1 {
 }
 
 .overlay img {
-  width: auto;
-  height: auto;
-  border-radius: 10px;
+  border-radius: 60px;
   box-shadow: 0 2px 12px rgba(255, 255, 255, 0.2);
 }
 
