@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aesthetic</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Aesthetic Image Uploader</h1>
+
+    <form action="/add" method="POST" class="url-form">
+      <input type="url" name="url" placeholder="Enter Image URL" required />
+      <button type="submit">Add Image</button>
+    </form>
+
+    <div class="gallery">
+      <!--IMAGE_GALLERY-->
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay hidden">
+    <span id="closeBtn" class="close-btn">&times;</span>
+    <form id="deleteForm" method="POST">
+      <button class="delete-btn" onclick="return confirm('Delete this image?');">Delete</button>
+    </form>
+    <img id="overlayImg" src="" alt="Fullscreen Image" />
+  </div>
+
+  <script>
+    const overlay = document.getElementById('overlay');
+    const overlayImg = document.getElementById('overlayImg');
+    const closeBtn = document.getElementById('closeBtn');
+    const deleteForm = document.getElementById('deleteForm');
+
+    document.addEventListener('click', e => {
+      if (e.target.tagName === 'IMG' && e.target.closest('.image-item')) {
+        overlay.classList.remove('hidden');
+        overlayImg.src = e.target.src;
+        deleteForm.action = '/delete?url=' + encodeURIComponent(e.target.src);
+      }
+    });
+
+    closeBtn.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
