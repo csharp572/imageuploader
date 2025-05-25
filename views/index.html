@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aesthetic</title>
+  <title>Aesthetic Image Uploader</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
@@ -39,14 +39,19 @@
 
     <div class="gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!--
-      <div class="image-item relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
-        <img src="https://placehold.co/400x300/D0E1D4/71697A?text=Placeholder" alt="Placeholder Image" class="w-full h-48 object-cover rounded-lg" />
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span class="text-white text-xl font-bold">View</span>
+        IMPORTANT: Your Node.js server needs to dynamically insert image items here.
+        For each image URL fetched from your MongoDB database, you should generate
+        an HTML structure like the one below.
+
+        Example of how your Node.js code might render an image:
+        <div class="image-item relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+          <img src="YOUR_IMAGE_URL_FROM_DB" alt="Uploaded Image" class="w-full h-48 object-cover rounded-lg" />
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-white text-xl font-bold">View</span>
+          </div>
         </div>
-      </div>
       -->
-    </div>
+      </div>
   </div>
 
   <div id="deleteModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
